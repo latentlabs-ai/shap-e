@@ -114,7 +114,7 @@ class Predictor(BasePredictor):
             for i, latent in enumerate(latents):
                 filename = f"/tmp/mesh_{i}.glb"
                 t = decode_latent_mesh(self.xm, latent).tri_mesh()
-                with open(filename, "w") as f:
+                with open(filename, "wb") as f:
                     t.write_glb(f)
                 output.append(Path(filename))
 
